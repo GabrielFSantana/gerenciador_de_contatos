@@ -8,3 +8,9 @@ Este projeto é um Gerenciador de Contatos simples desenvolvido em Python utiliz
 - Excluir contatos: É possível excluir contatos individualmente.
 - Exportar contatos: O usuário pode baixar a lista de contatos em um arquivo JSON.
 - Modo claro e escuro: O site oferece a possibilidade de alternar entre os temas claro e escuro para melhor experiência do usuário.
+
+## Tecnologias Usadas
+- Flask: Framework utilizado para o backend.
+- Python: Linguagem de programação principal.
+- HTML/CSS/JavaScript: Para a construção da interface web.
+- Bootstrap: Framework para o design responsivo e componentes de UI
