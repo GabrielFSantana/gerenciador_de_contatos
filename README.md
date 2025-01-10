@@ -31,6 +31,7 @@ Este projeto é um Gerenciador de Contatos simples desenvolvido em Python utiliz
 - Para exportar a lista de contatos, clique em Baixar Contatos (JSON).
 
 ## Imagens do Projeto
-- Interface WEB: ![image](https://github.com/user-attachments/assets/6b69945c-cc44-47c0-9e07-fb038da2ab45)
-- Donwload do JSON: ![image](https://github.com/user-attachments/assets/feb863c7-d288-4d98-a192-af2561df44fa)
+- Interface WEB: ![interface_web](https://github.com/user-attachments/assets/6b69945c-cc44-47c0-9e07-fb038da2ab45)
+- Download do JSON: ![download_json](https://github.com/user-attachments/assets/feb863c7-d288-4d98-a192-af2561df44fa)
+- Validação do JSON: ![json_validated](https://github.com/user-attachments/assets/90433e0e-ec14-46f2-b869-31cc78b14761)
 
