@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, send_file
+from flask import Flask, request, jsonify, render_template, send_file, redirect, url_for
 import json
 import os
 
@@ -18,8 +18,15 @@ def salvar_contatos(contatos):
 
 @app.route("/")
 def home():
+    busca = request.args.get("busca", "").lower()  # Captura o termo de busca
     contatos = carregar_contatos()
-    return render_template("index.html", contatos=contatos)
+    
+    # Filtra os contatos com base no termo de busca
+    contatos_filtrados = {
+        nome: dados for nome, dados in contatos.items() if busca in nome.lower()
+    }
+    
+    return render_template("index.html", contatos=contatos_filtrados, busca=busca)
 
 @app.route("/adicionar", methods=["POST"])
 def adicionar_contato():

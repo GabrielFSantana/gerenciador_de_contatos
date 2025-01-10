@@ -16,6 +16,13 @@
 
         <div class="row">
             <!-- ABA ESQUERDA -->
+
+        <!-- FORMULÁRIO DE BUSCA -->
+        <form method="GET" action="/" class="mb-3">
+            <input type="text" name="busca" class="form-control" placeholder="Buscar contato" value="{{ busca }}">
+            <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+        </form>
+
             <div class="col-lg-8">
                 <!-- INCLUIR NOMES E DADOS -->
                 <form action="/adicionar" method="post" class="mb-4 p-4 bg-white shadow rounded">
