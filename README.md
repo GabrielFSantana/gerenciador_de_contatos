@@ -23,3 +23,9 @@ Este projeto é um Gerenciador de Contatos simples desenvolvido em Python utiliz
 
 ### 3. Execute o servidor:
 ```python app.py```
+## Como Usar
+- Abra o navegador e vá até o endereço http://127.0.0.1:5000/.
+- Você verá a lista de contatos (caso existam).
+- Para adicionar um novo contato, preencha os campos e clique em Adicionar Contato.
+- Para excluir um contato, clique em Deletar ao lado do contato.
+- Para exportar a lista de contatos, clique em Baixar Contatos (JSON).
