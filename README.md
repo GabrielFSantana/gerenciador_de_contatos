@@ -14,3 +14,12 @@ Este projeto é um Gerenciador de Contatos simples desenvolvido em Python utiliz
 - Python: Linguagem de programação principal.
 - HTML/CSS/JavaScript: Para a construção da interface web.
 - Bootstrap: Framework para o design responsivo e componentes de UI
+
+## Instalação
+### 1. Clone o repositório:
+```git clone https://github.com/GabrielFSantana/gerenciador-de-contatos.git```
+### 2. Instale as dependências:
+```pip install -r requirements.txt```
+
+### 3. Execute o servidor:
+```python app.py```
