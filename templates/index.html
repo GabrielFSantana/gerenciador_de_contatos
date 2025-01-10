@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Contatos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container my-5">
+        <div class="text-end mb-4">
+            <button id="toggleTheme" class="btn btn-dark">Alternar Tema</button>
+        </div>
+        <h1 class="text-center mb-4">Gerenciador de Contatos</h1>
+
+        <div class="row">
+            <!-- ABA ESQUERDA -->
+            <div class="col-lg-8">
+                <!-- INCLUIR NOMES E DADOS -->
+                <form action="/adicionar" method="post" class="mb-4 p-4 bg-white shadow rounded">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite o nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="text" id="telefone" name="telefone" class="form-control" placeholder="Digite o telefone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Digite o email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Adicionar Contato</button>
+                </form>
+
+                <!-- LISTA OS CONTATOS -->
+                <h2 class="text-center mb-3">Lista de Contatos</h2>
+                <ul class="list-group">
+                    {% for nome, dados in contatos.items() %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>
+                            <strong>{{ nome }}</strong><br>
+                            {{ dados.telefone }} - {{ dados.email }}
+                        </span>
+                        <form action="/deletar/{{ nome }}" method="post" class="d-inline">
+                            <button type="submit" class="delete-btn btn btn-sm">Deletar</button>
+                        </form>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+
+                <!-- REALIZA O DONWLOAD DO ARQUIVO JSON -->
+                <div class="text-center mt-4">
+                    <a href="/download" class="btn btn-success">Baixar Contatos (JSON)</a>
+                </div>
+            </div>
+
+            <!-- ABA LATERAL -->
+            <div class="col-lg-4">
+                <div class="p-4 bg-white shadow rounded">
+                    <h3>Sobre o Projeto</h3>
+                    <p>Este é um Gerenciador de Contatos desenvolvido com Flask, que permite adicionar, visualizar e gerenciar contatos de forma simples e prática.</p>
+                    <ul>
+                        <li>Adicione contatos com Nome, Telefone e Email.</li>
+                        <li>Exclua contatos com facilidade.</li>
+                        <li>Faça o download de todos os contatos em formato JSON.</li>
+                    </ul>
+                    <hr>
+                    <p>Quer ver mais projetos como este?</p>
+                    <a href="https://github.com/GabrielFSantana" target="_blank" class="btn btn-dark">Visite nosso GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-white shadow">
+        <p class="mb-0">Desenvolvido por <strong>Gabriel Felipe Santana Belarmino</strong> e <strong>Akira</strong>  🤖</p>
+        <small class="text-muted">Gerenciador de Contatos | 2025</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
