@@ -33,6 +33,7 @@ def adicionar_contato():
     nome = request.form.get("nome")
     telefone = request.form.get("telefone")
     email = request.form.get("email")
+    grupo = request.form.get("grupo")
     
     if not nome or not telefone or not email:
         return jsonify({"erro": "Todos os campos devem ser preenchidos!"}), 400
